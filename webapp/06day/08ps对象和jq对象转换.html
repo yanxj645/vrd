@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text"id="i1">
+<input type="button"value="js转jq"onclick="fn1()">
+<input type="button"value="jq转js"onclick="fn2()">
+
+<script src="../js/jquery-1.4.2.js"></script>
+<script>
+
+
+
+    function fn1() {
+        //得到js对象
+    let js = document.getElementById("i1");
+    //js转成jq对象
+    let jq =$(js);
+    alert(jq.val())
+    }
+    function fn2() {
+//jq对象
+        let jq = $("#i1");
+        let js = jq[0];
+        alert(js.value);
+    }
+</script>
+</body>
+</html>

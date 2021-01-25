@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       div,img{width: 200px;height: 150px}
+        div{
+            position: relative;
+            overflow: hidden;
+        }
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="2.jpg"alt="">
+    <img src="3.jpg"alt="">
+    <img src="6.jpg"alt="">
+</div>
+<script src="../js/jquery-1.4.2.js"></script>
+<script>
+    $("img").each(function (i) {
+        $(this).css("left",i*200+"px")
+    })
+    setInterval(function () {
+        $("img").each(function () {
+            let left = parseInt($(this).css("left"))
+            left-=2;
+            if (left<=-200){
+                left=400;
+            }
+            $(this).css("left",left+"px");
+        })
+    },10)
+    setInterval(function () {
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-image: url("bg1.jpg");
+            overflow: hidden;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<h3 id="s_h3">干掉的数量</h3>
+<h3 id="f_h3">跑掉的数量</h3>
+<script src="../js/jquery-1.4.2.js"></script>
+<script>
+    let sCont=0;
+    let fCont=0;
+    let w = $(window).width();
+    let h = $(window).height();
+    $("body").css("background-size",w+"px "+h+"px");
+    onresize = function(){
+     w = $(window).width();
+     h= $(window).height();
+    $("body").css("background-size",w+"px "+h+"px");
+    }
+    setInterval(function () {
+        let img = $("<img src=zomb0.png>")
+        let top = parseInt(Math.random()*(h-50));
+        img.css({"left":w+"px","top":top+"px"})
+        $("body").append(img);
+        //给僵尸图片添加移入事件
+        img.mouseover(function () {
+            let hp = img.attr("hp")
+            hp--;
+            img.attr("hp",hp);
+            if(hp<=0) {
+                img.remove();
+                sCont++
+                //把数量显示
+                $("#s_h3").text("干掉数量:" + sCont);
+            }
+        })
+    },500)
+
+        setInterval(function () {
+            let type = parseInt(sCont/20);
+            if(type>3) {
+                type = 3;
+            }
+            let img=$("<img src='zomb+type+'.png>");
+            //得到所有图片的履历
+            $("img").each(function () {
+
+                //得到之前的left
+                let left = parseInt($(this).css("left"))
+                left -= 1;
+
+                    //停止定时器
+                    //clearInterval(timer)
+
+                //把变小的left赋值回去
+                $(this).css("left", left + "px");
+                if (left<=200){
+                    this.remove()
+                    fCont++
+                    $("#f_h3").text("跑掉数量:"+fCont);
+                    if (fCont==10){
+                        setTimeout(function () {
+                            alert("游戏结束");
+                            location.reload();
+
+                        },300)
+                    }
+                }
+            })
+        }, 10)
+
+
+    //开启定时器每隔两秒换一张
+    let changeTimer = setInterval(change, 2000);
+    //鼠标移入事件
+    $("div").mouseover(function () {
+        clearInterval(changeTimer)
+    });
+    $("div").mouseout(function () {
+        changeTimer = setInterval(change, 2000);
+    });
+</script>
+</body>
+</html>

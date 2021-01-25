@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button"value="丽塔1" onclick="fny(1)">
+<input type="button"value="丽塔2" onclick="fny(2)">
+<input type="text" placeholder="请输入个数"id="i1">
+<div id="d1"></div>
+<script>
+  setInterval(function () {
+    alert("时间到")
+  },3000);
+        function fny(x) {
+        //根据点击的按钮 得到对应的图片
+        let imgName = x==1?"6.jpg":"3.jpg";
+        let  count=0;
+        let timer  =setInterval(function () {
+        d1.innerHTML+="<img src='"+imgName+"'>"
+            count++
+            if (count==i1.value){
+                clearInterval(timer)
+            }
+        },500)
+    }
+
+
+</script>
+</body>
+</html>

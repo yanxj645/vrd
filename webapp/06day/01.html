@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div onmouseover="overfn()"onmouseout="outfn()"onmousedown="domfn()"onmouseup="upfn()"onmousemove="movefn()"></div>
+<script>
+    function domfn() {
+        console.log("鼠标按下")
+    }
+    function upfn() {
+        console.log("鼠标抬起")
+    }
+    function movefn() {
+        console.log("鼠标移动")
+    }
+    function overfn() {
+        console.log("鼠标移入")
+    }
+    function outfn() {
+        console.log("鼠标移出")
+    }
+</script>
+</body>
+</html>

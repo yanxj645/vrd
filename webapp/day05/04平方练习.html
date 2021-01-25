@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="i1" type="text">
+<input type="button"value="平方"onclick=fn4()>
+
+    <script>
+        function fn4(){
+            let i =document.getElementById("i1");
+            let d =document.getElementById("d1");
+            //判断是否为NaN
+            if (isNaN(i.value)){
+                d.innerText="输入错误";
+            }else{
+                d.innerText = i.value*i.value;
+                //字符串进行减乘除时全自动转成数据
+                //d.innerText = i.value*1.value*1;
+                //d.innerText = porsInt(i.value)+porsInt(i.value);
+            }
+        }
+    </script>
+<div id="d1"></div>
+</body>
+</html>

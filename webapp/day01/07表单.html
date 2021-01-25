@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<form>
+<h3>注册页面</h3>
+
+    <!--所有控件不许写name属性-->
+    用户名:<input type="text" name="username" value="abc" placeholder="请输入用户名"maxlength="5"readonly="readonly"><br>
+    密码:<input type="password" name="password"placeholder="请输入密码"><br>
+    <!--单选必须相同的那么值 必须添加volue否则提交的是on checket默认选中-->
+    性别:<input type="radio"name="gender"value="m"id="r1"><iable for="r10">男</iable>
+    <input name="gender"type="radio"value="w"checked="checked">女<br>
+    <input type="submit"value="注册">
+    兴趣爱好<input type="checkbox"name="hody"value="idm">敲代码
+    <input type="checkbox"name="gobby"value="v3">fgo
+    <input type="checkbox"name="hody"value="w2">约会
+    <input type="checkbox"name="gobby"value="pn">睡觉
+    生日:<input type="date" name="hirthday"><br>
+    拍照:<input type="file" name="plc"><br>
+    所在地
+    <select name="city">
+        <option value="bj">北京</option>
+        <option value="sh"selected="selected">上海</option>
+        <option value="gz">广州</option>
+        </select><br>>
+    个人介绍:<rextares name="intro" placeholder="说点啥..."cols="30" rows="3"></rextares><br>
+    <input>
+</form>
+</body>
+</html>

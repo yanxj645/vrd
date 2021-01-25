@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>刘备</p>
+<p>关羽</p>
+<p>张飞</p>
+<div>
+    <script src="../js/jquery-1.4.2.js"></script>
+    <script>
+        let i=$("<img src=../day07/3.jpg>")
+        // $("div").append(i);
+       // $("div").prepend(i)
+        $("p:eq(1)").before(i);
+        //$("p:eq(2)").after(i);
+        $("p:last").remove();
+    </script>
+</div>
+</body>
+</html>

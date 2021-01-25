@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="姓名">
+<input type="text" placeholder="年龄">
+<input type="text" placeholder="工资">
+<input type="text" placeholder="工作">
+<input type="button" value="添加">
+<hr>
+<table border="1">
+    <caption>员工列表</caption>
+    <tr>
+        <th>姓名</th><th>年龄</th><th>工资</th>
+        <th>工作</th><th>操作</th>
+    </tr>
+</table>
+<script src="../js/jquery-1.4.2.js"></script>
+<script>
+    //给按钮添加点击事件
+    $("input:last").click(function () {
+        //创建1个tr 和5个td
+        let tr = $("<tr></tr>");
+        let nametd = $("<td></td>");
+        let agetd = $("<td></td>");
+        let salarytd = $("<td></td>");
+        let jobtd = $("<td></td>");
+        let deltd = $("<td><input type='button' value='删除'></td>");
+        //得到td里面的按钮
+        deltd.children().click(function () {
+            //删除当前行
+            tr.remove();
+        });
+        //给td设置文本内容
+        nametd.text($("input:eq(0)").val());
+        agetd.text($("input:eq(1)").val());
+        salarytd.text($("input:eq(2)").val());
+        jobtd.text($("input:eq(3)").val());
+        //把td装进tr 把tr装进table
+        tr.append(nametd);
+        tr.append(agetd);
+        tr.append(salarytd);
+        tr.append(jobtd);
+        tr.append(deltd);
+        $("table").append(tr);
+    })
+</script>
+</body>
+</html>

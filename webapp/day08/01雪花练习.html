@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    body{
+        background-color: black;
+    }
+    img{
+        position: absolute;
+    }
+</style>
+</head>
+<body>
+<script src="../js/jquery-1.4.2.js"></script>
+<script>
+    setInterval(function () {
+        let img =$("<img src='snow.png'>");
+        let size = parseInt(Math.random()*21)+20;
+        let left = parseInt(Math.random()*($(window).width()-size));
+
+        img.css({"width":size+"px","top":"0","left":left+"px"});
+        $("body").append(img);
+        img.animate({"top":$(window).height()-size+"px"},size*100)
+        .fadeOut(100,function () {
+          img.remove()
+        });
+    },10)
+
+
+</script>
+</body>
+</html>

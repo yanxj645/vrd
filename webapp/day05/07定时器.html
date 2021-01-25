@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="myh1">0</h1>
+<h2 id="myh2">0</h2>
+<h2 id="d1">0</h2>
+<script>
+    let count=0;
+    //开启定时器第一种写法
+    //当方法作为参数进行传递是不加括号,调用方法时加括号
+    setInterval(myfn,1000);
+    function myfn() {
+        //alert("xxx")
+        count++;
+        //浏览器控制台输出代码
+        console.log(count)
+        myh1.innerText=count;
+    }
+    let x=0;
+    //开启定时器
+   let timer = setInterval(function () {
+        myh2.innerText=x++
+        if (x==300){
+            //停止定时器
+            clearInterval(timer);
+        }
+    },10);
+   //每隔一秒在页面中添加一张图片
+    setInterval(function () {
+        d1.innerHTML+='<img src="6.jpg">'
+                },3000)
+
+
+
+</script>
+</body>
+</html>

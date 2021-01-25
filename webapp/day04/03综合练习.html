@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body>div{
+            width: 1000px;
+            margin: 0 auto;
+
+        }
+        #top_div{
+            height: 376px;
+            width: 1000px;
+
+        }
+        #t_left{
+            width: 611px;
+            height: 376px;
+            background-color: #e8e8e8;
+            float:left;
+        }
+        #p_left{
+            width: 375px;
+            height: 376px;
+            background-color:#e8e8e8 ;
+            float: right;
+            position: relative;/*参照物*/
+        }
+
+        #top_div,#botton_div{
+            overflow: hidden;
+        }
+        #b_div{
+            width: 365px;
+            height: 233px;
+            background-color: #e8e8e8;
+            float:left;
+            margin-top: 10px;
+        }
+        .b_right{
+            width: 198px;
+            height: 233px;
+            background-color: #e8e8e8;
+            float: right;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div>
+    <div id="top_div">
+        <div id="t_left"></div>
+        <div id="p_left"></div>
+    </div>
+    <div>
+    <div id="botton_div"></div>
+    <div id="b_div"></div>
+    <div class="b_right"></div>
+    <div class="b_right"></div>
+    <div class="b_right"></div>
+    </div>
+</div>
+</body>
+</html>

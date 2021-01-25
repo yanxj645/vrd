@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        onload=function() {
+            d1.innerText = "测试文本"
+        }
+    </script>
+</head>
+<body>
+<div id="d1"></div>
+<select name="city" id="s1">
+    <option value="bj">北京</option>
+    <option value="sh">上海</option>
+    <option value="gz">广州</option>
+</select>
+
+    <input type="text"onblur="blurfn()"id="i1"placeholder="请输入用户名">
+<span id="myspan"></span>
+<script>
+    function changfn() {
+        if (i1.value=="tom"){
+            myspan.innerText="用户名已存在"
+        }else{
+            myspan.innerText="用户名可用"
+        }
+    alert(s1.value)
+    }
+</script>
+</body>
+</html>
